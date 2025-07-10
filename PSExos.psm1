@@ -1,0 +1,19 @@
+# Shared Utils
+. $PSScriptRoot\Shared\Context.ps1
+. $PSScriptRoot\Shared\Invoke-ExosApi.ps1
+. $PSScriptRoot\Shared\Remove-Metadata.ps1
+
+# Auth commands
+. $PSScriptRoot\Auth\Login.ps1
+. $PSScriptRoot\Auth\Revoke.ps1
+
+# API Commands
+# Persons
+. $PSScriptRoot\API\Persons\Get.ps1
+# . $PSScriptRoot\API\Persons\Create.ps1
+
+# PersonsAccessRights
+. $PSScriptRoot\API\PersonsAccessRights\Get.ps1
+
+# AccessDomains
+. $PSScriptRoot\API\AccessDomains\Get.ps1
