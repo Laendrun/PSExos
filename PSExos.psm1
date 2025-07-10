@@ -10,7 +10,8 @@
 # API Commands
 # Persons
 . $PSScriptRoot\API\Persons\Get.ps1
-# . $PSScriptRoot\API\Persons\Create.ps1
+. $PSScriptRoot\API\Persons\ActivateMobileAccessDevice.ps1
+. $PSScriptRoot\API\Persons\AssignAccessRights.ps1
 
 # PersonsAccessRights
 . $PSScriptRoot\API\PersonsAccessRights\Get.ps1

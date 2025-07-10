@@ -56,6 +56,10 @@ function Exos.API.Persons.AssignAccessRight {
   *SecurityLevel is required only if configured in the system.
 
   Possible Error Codes:
+    | 300004     | Missing authorisation                                                | 403              |
+    | 300008     | Unknown API key or Identifier                                        | 401              |
+    | 400090     | Access domain not found                                              | 404              |
+    | 999999     | Unknown error                                                        | 500              |
 
   Other notes:
     - If the person is a visitor, you must provide a `VisitId` in the body.

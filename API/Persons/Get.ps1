@@ -54,10 +54,10 @@ function Exos.API.Persons.Get {
   Required Access Right: ["API_SDM_EmployeeRead","API_VM_VisitorRead","API_CM_ContractorRead"]
 
   Possible Error Codes:
-    403 Forbidden - 300004 - Missing authorisation
-    401 Unauthorized - 300008 - Unknown API key or Identifier
-    403 Forbidden - 400088 - The read permission for the field is missing
-    500 Internal Server Error - 999999 - Unknown error
+    | 300004     | Missing authorisation                                                | 403              |
+    | 300008     | Unknown API key or Identifier                                        | 401              |
+    | 400088     | The read permission for the field is missing                         | 403              |
+    | 999999     | Unknown error                                                        | 500              |
 
   Other notes:
     Be aware that a query made here can return up to 10000 records.
