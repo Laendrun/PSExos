@@ -1,27 +1,27 @@
-function Exos.API.Persons.AssignKey {
+function Exos.API.Persons.AssignKeyRing {
   <#
 .SYNOPSIS
-  Assigns the key to the person
+  Assigns the KeyRing to the person
 
 .DESCRIPTION
-  Sends a request to assign the key to the specified person
+  Sends a request to assign the keyring to the specified person
 
 .PARAMETER PersonId
-  REQUIRED. The unique identifier of the person to assign the key to.
+  REQUIRED. The unique identifier of the person to assign the keyring to.
 
 .PARAMETER Body
   REQUIRED. A hashtable containing the key assignment parameters.
 
   Common keys:
-    - KeyId         : (Required) The unique identifier of the key to assign
-                      Default: KeyId001
-    - PledgeText    : A text label for key pledge
+    - KeyRingId     : (Required) The unique identifier of the keyring to assign
+                      Default: KeyRingId01
+    - PledgeText    : A text label for keyring pledge
                       Default: ""
                       Nullable: true
     - PledgeAmount  : Numeric amount associated with the pledge
                       Default: 1
                       Nullable: true
-    - Comment       : Optional comment about the assignement
+    - Comment       : Optional comment about the assignment
                       Default: ""
                       Nullable: true
 
@@ -36,9 +36,9 @@ function Exos.API.Persons.AssignKey {
   System.Object - API response or filtered PSCustomObject
 
 .NOTES
-  API Endpoint: POST /persons/{personId}/assignKey
+  API Endpoint: POST /persons/{personId}/assignKeyRing
 
-  Required Access Right: 	["API_SDM_EmployeeAssignKey","API_CM_ContractorAssignKey"]
+  Required Access Right: 	["API_SDM_EmployeeAssignKeyRing","API_CM_ContractorAssignKeyRing"]
 
   Possible Error Codes:
     | 100000     | Validation Error                                                            | 400              |
@@ -52,11 +52,12 @@ function Exos.API.Persons.AssignKey {
     | 300004     | Missing authorisation                                                       | 403              |
     | 300008     | Unknown API key or Identifier                                               | 401              |
     | 400001     | Person not found                                                            | 404              |
+    | 400004     | Media already assigned                                                      | 400              |
     | 400007     | Media not found                                                             | 404              |
     | 400065     | Key assignement could not be made, because the key is already assinged      | 400              |
-    | 400066     | Key assignement could not be made, key is part of a keyring                 | 400              |
     | 400067     | Key assignement could not be made, key state is not assignable              | 400              |
     | 400072     | Returned if an operation can not be executed because person is on blacklist | 400              |
+    | 400074     | Keyring assignement could not be made, keyring is already assigned          | 400              |
     | 400139     | Function is not allowed because tenant is not base tenant of this person    | 400              |
     | 400146     | Person does not have the correct type                                       | 400              |
     | 999999     | Unknown error                                                               | 500              |
@@ -69,11 +70,11 @@ function Exos.API.Persons.AssignKey {
     [switch]$NoMetadata
   )
 
-  $url = "$($script:ExosContext.ApiUri)/persons/$PersonId/assignKey"
+  $url = "$($script:ExosContext.ApiUri)/persons/$PersonId/assignKeyRing"
   $url += "?ignoreBlacklist=$IgnoreBlacklist"
 
   $response = Invoke-ExosApi -Method POST -Uri $url -Body $Body
-  
+
   if ($NoMetadata) {
     return Remove-ODataMetadata $response
   }
