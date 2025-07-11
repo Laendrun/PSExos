@@ -11,6 +11,7 @@
 # Persons
 . $PSScriptRoot\API\Persons\Get.ps1
 . $PSScriptRoot\API\Persons\ActivateMobileAccessDevice.ps1
+. $PSScriptRoot\API\Persons\DeactivateMobileAccessDevice.ps1
 . $PSScriptRoot\API\Persons\AssignAccessRights.ps1
 
 # PersonsAccessRights
