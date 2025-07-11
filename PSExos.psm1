@@ -18,6 +18,7 @@
 . $PSScriptRoot\API\Persons\AssignKey.ps1
 . $PSScriptRoot\API\Persons\AssignKeyRing.ps1
 . $PSScriptRoot\API\Persons\AssignLogin.ps1
+. $PSScriptRoot\API\Persons\AssignTransitionalBadge.ps1
 
 # PersonsAccessRights
 . $PSScriptRoot\API\PersonsAccessRights\Get.ps1

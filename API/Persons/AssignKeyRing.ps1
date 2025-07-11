@@ -66,7 +66,7 @@ function Exos.API.Persons.AssignKeyRing {
     [Parameter(Mandatory = $true)]
     [string]$PersonId,
     [hashtable]$Body,
-    [bool]$IgnoreBlacklist,
+    [bool]$IgnoreBlacklist = $false,
     [switch]$NoMetadata
   )
 
