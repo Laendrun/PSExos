@@ -4,10 +4,10 @@ function Exos.API.Persons.ActivateMobileAccessDevice {
   Activates a Mobile Access Device.
 
 .DESCRIPTION
-  Sends a request to active a mobile access device.
+  Sends a request to activate a mobile access device.
 
 .PARAMETER PersonId
-  The unique identifier of the person to active the mobile access for.
+  The unique identifier of the person to activate the mobile access for.
 
 .PARAMETER Body
   A hashtable containing the request body parameters.
@@ -44,7 +44,7 @@ function Exos.API.Persons.ActivateMobileAccessDevice {
     [switch]$NoMetadata
   )
 
-  $url = ="$($script:ExosContext.ApiUri)/persons/$PersonId/activateMobileAccessDevice"
+  $url ="$($script:ExosContext.ApiUri)/persons/$PersonId/activateMobileAccessDevice"
 
   $response = Invoke-ExosApi -Method POST -Uri $url
 
