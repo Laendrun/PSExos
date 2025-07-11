@@ -69,7 +69,7 @@ function Exos.API.Persons.AssignKey {
     [switch]$NoMetadata
   )
 
-  $url = "$($script:ExosContext.ApiUri)/persons/$PersonId/assigKey"
+  $url = "$($script:ExosContext.ApiUri)/persons/$PersonId/assignKey"
   $url += "?ignoreBlacklist=$IgnoreBlacklist"
 
   $response = Invoke-ExosApi -Method POST -Uri $url -Body $Body
