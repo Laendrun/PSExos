@@ -14,6 +14,7 @@
 . $PSScriptRoot\API\Persons\DeactivateMobileAccessDevice.ps1
 . $PSScriptRoot\API\Persons\AssignAccessRights.ps1
 . $PSScriptRoot\API\Persons\AssignBadge.ps1
+. $PSScriptRoot\API\Persons\AssignInitializedBadge.ps1
 
 # PersonsAccessRights
 . $PSScriptRoot\API\PersonsAccessRights\Get.ps1
