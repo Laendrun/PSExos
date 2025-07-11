@@ -1,5 +1,5 @@
 function Exos.API.Persons.AssignAccessRight {
-<#
+  <#
 .SYNOPSIS
   Assigns an access right to a person in the EXOS system.
 
@@ -77,10 +77,10 @@ function Exos.API.Persons.AssignAccessRight {
   $url = "$($script:ExosContext.ApiUri)/persons/$PersonId/assignAccessRight"
   $url += "?ignoreBlacklist=$IgnoreBlacklist"
 
-  $resposne = Invoke-ExosApi -Method POST -Uri $url -Body $Body
+  $response = Invoke-ExosApi -Method POST -Uri $url -Body $Body
 
   if ($NoMetadata) {
-    return Reomve-ODataMetadata $response
+    return Remove-ODataMetadata $response
   }
 
   return $response
