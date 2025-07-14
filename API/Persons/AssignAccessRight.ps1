@@ -12,7 +12,7 @@ function Exos.API.Persons.AssignAccessRight {
   The unique identifier of the person to assign the access right to.
 
 .PARAMETER Body
-  A hashtable containing the access right assignment paramters.
+  A hashtable containing the access right assignment parameters.
 
   Common keys:
     - AccessRightId       : (Required) ID of the access right to assign
