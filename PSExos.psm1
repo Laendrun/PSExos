@@ -25,6 +25,8 @@
 . $PSScriptRoot\API\Persons\ReleaseToTenant.ps1
 . $PSScriptRoot\API\Persons\ResetWeight.ps1
 . $PSScriptRoot\API\Persons\SetPin.ps1
+. $PSScriptRoot\API\Persons\SetRoom.ps1
+. $PSScriptRoot\API\Persons\Tenants.ps1
 
 # PersonsAccessRights
 . $PSScriptRoot\API\PersonsAccessRights\Get.ps1
