@@ -29,6 +29,7 @@
 . $PSScriptRoot\API\Persons\Tenants.ps1
 . $PSScriptRoot\API\Persons\UnassignAccessRight.ps1
 . $PSScriptRoot\API\Persons\UnassignAccessRightByAssignmentId.ps1
+. $PSScriptRoot\API\Persons\UnassignBadge.ps1
 
 # PersonsAccessRights
 . $PSScriptRoot\API\PersonsAccessRights\Get.ps1
