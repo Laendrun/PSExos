@@ -1,23 +1,16 @@
-function Exos.API.Persons.Block {
+function Exos.API.Persons.ReleaseToTenant {
   <#
 .SYNOPSIS
-  Blocks a person.
+  Release a person to another tenant.
 
 .DESCRIPTION
-  Sends a request to block the specified person.
+  Release the specified person to the specified tenant.
 
 .PARAMETER PersonId
-  REQUIRED. The unique identifier of the person to block.
+  REQUIRED. The unique identifier of the person to release to another tenant.
 
-.PARAMETER Body
-  REQUIRED. A hashtable containing the parameters.
-
-  Common keys:
-    - Reason  : (Required) The reason for blocking the user
-                Default: ""
-    - Comment : A comment related to blocking the user
-                Default: ""
-                Nullable: true
+.PARAMETER TenantId
+  REQUIRED. The unique identifier of the tenant to release the specified person to.
 
 .PARAMETER NoMetadata
   If specified, removes OData metadata fields from the returned object.
@@ -26,35 +19,33 @@ function Exos.API.Persons.Block {
   System.Object - API response or filtered PSCustomObject
 
 .NOTES
-  API Endpoint: POST /persons/{personId}/block
+  API Endpoint: GET /persons/{personId}/releaseToTenant{tenantId}
 
-  Required Access Right: 	["API_SDM_EmployeeBlock","API_VM_VisitorBlock","API_CM_ContractorBlock"]
+  Required Access Right: "API_SDM_PersonReleaseToTenant"
 
   Possible Error Codes:
     | 100000     | Validation Error                                                            | 400              |
     | 100001     | Invalid Length                                                              | 400              |
-    | 100002     | Input object null                                                           | 400              |
     | 100005     | Required parameter missing                                                  | 400              |
-    | 100006     | Parameter not allowed                                                       | 400              |
+    | 300001     | Invalid license function                                                    | 403              |
     | 300004     | Missing authorisation                                                       | 403              |
     | 300008     | Unknown API key or Identifier                                               | 401              |
     | 300009     | Missing category(group) authorisation                                       | 403              |
     | 400001     | Person not found                                                            | 404              |
-    | 400026     | Person already blocked                                                      | 400              |
-    | 400072     | Returned if an operation can not be executed because person is on blacklist | 400              |
     | 400139     | Function is not allowed because tenant is not base tenant of this person    | 400              |
-    | 500000     | Returned if Rabbit Mq Message could not be published                        | 400              |
+    | 400140     | The tenant cannot be found                                                  | 404              |
+    | 400141     | The person is already released to this tenant                               | 400              |
     | 999999     | Unknown error                                                               | 500              |
 #>
   param (
     [Parameter(Mandatory = $true)]
     [string]$PersonId,
     [Parameter(Mandatory = $true)]
-    [hashtable]$Body,
+    [string]$TenantId,
     [switch]$NoMetadata
   )
 
-  $url = "$($script:ExosContext.ApiUri)/persons/$PersonId/block"
+  $url = "$($script:ExosContext.ApiUri)/persons/$PersonId/releaseToTenant/$TenantId"
 
   $response = Invoke-ExosApi -Method POST -Uri $url
 

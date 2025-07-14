@@ -22,6 +22,8 @@
 . $PSScriptRoot\API\Persons\Block.ps1
 . $PSScriptRoot\API\Persons\Delete.ps1
 . $PSScriptRoot\API\Persons\Image.ps1
+. $PSScriptRoot\API\Persons\ReleaseToTenant.ps1
+. $PSScriptRoot\API\Persons\ResetWeight.ps1
 
 # PersonsAccessRights
 . $PSScriptRoot\API\PersonsAccessRights\Get.ps1
