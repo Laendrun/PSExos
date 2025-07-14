@@ -7,7 +7,7 @@ function Exos.API.Persons.Block {
   Sends a request to block the specified person.
 
 .PARAMETER PersonId
-  REQUIRED. The unique identifier of the person block.
+  REQUIRED. The unique identifier of the person to block.
 
 .PARAMETER Body
   REQUIRED. A hashtable containing the parameters.
