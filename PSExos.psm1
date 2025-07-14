@@ -31,6 +31,7 @@
 . $PSScriptRoot\API\Persons\UnassignAccessRightByAssignmentId.ps1
 . $PSScriptRoot\API\Persons\UnassignBadge.ps1
 . $PSScriptRoot\API\Persons\UnassignInitializedBadge.ps1
+. $PSScriptRoot\API\Persons\UnassignKey.ps1
 
 # PersonsAccessRights
 . $PSScriptRoot\API\PersonsAccessRights\Get.ps1
