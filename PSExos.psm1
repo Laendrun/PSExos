@@ -21,6 +21,7 @@
 . $PSScriptRoot\API\Persons\AssignTransitionalBadge.ps1
 . $PSScriptRoot\API\Persons\Block.ps1
 . $PSScriptRoot\API\Persons\Delete.ps1
+. $PSScriptRoot\API\Persons\Image.ps1
 
 # PersonsAccessRights
 . $PSScriptRoot\API\PersonsAccessRights\Get.ps1
