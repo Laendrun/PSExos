@@ -10,7 +10,7 @@ function Exos.API.Persons.AssignTransitionalBadge {
   REQUIRED. The unique identifier of the person to assign the transitional badge to
 
 .PARAMETER Body
-  REQUIRED. A hashtable containing the key assignment parameters
+  REQUIRED. A hashtable containing the parameters
 
   Common keys:
     - TransitionalBadgeName : (Required) The name of the transitional badge
